@@ -16,7 +16,7 @@ function App() {
     return () => clearInterval(timer);
   },[]);
 
-  // Good morning, Good afternoon, Good evening, Good night 
+  // Good morning, Good afternoon, Good evening, Good night and also added background color change with time
   useEffect(() => {
     const currentHour = time.getHours(); // only to avoid scope bugs
     if(currentHour < 5) {
@@ -63,7 +63,7 @@ function App() {
         <h1 className='text-center text-3xl my-9'>Greeting App</h1>
         <h2>Current Time: <span>{`${hours}:${minutes}:${seconds} ${hours >= 12 ? "PM" : "AM"}`}</span></h2>
         
-        <input type="text" placeholder='enter your name' value={name} onChange={handelChange} className='border w-96 px-4 py-2 rounded-lg my-4'/>
+        <input type="text" placeholder='enter your name' value={name} onChange={handelChange} className='border w-96 px-4 py-2 rounded-lg my-4 dark:text-gray-700'/>
         <div className='min-h-14 my-2'>
           {
             submittedName && (
