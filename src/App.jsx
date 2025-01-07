@@ -57,9 +57,7 @@ function App() {
       <div className='min-h-[100vh] flex flex-col px-10 pt-5 bg-gray-200'>
         <h1 className='text-center text-3xl my-9'>Greeting App</h1>
         <h2>Current Time: <span>{`${hours}:${minutes}:${seconds} ${hours >= 12 ? "PM" : "AM"}`}</span></h2>
-        <div>
-          <p>Choose Greeting Style &#40;optional&#41;</p>
-        </div>
+        
         <input type="text" placeholder='enter your name' value={name} onChange={handelChange} className='border w-96 px-4 py-2 rounded-lg my-4'/>
         <div className='min-h-14 my-2'>
           {
