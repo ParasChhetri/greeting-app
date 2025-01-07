@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import './App.css'
 import { useEffect } from 'react';
@@ -7,6 +6,7 @@ function App() {
   const [name,setName] = useState("");
   const [submittedName,setSubmittedName] = useState("");
   const [greetingWithTime,setGreetingWithTime] = useState("");
+  const [bgColor,setBgColor] = useState("bg-gray-200")
   const [time,setTime] = useState(new Date());
   useEffect(() => {
     const timer = setInterval(() => {
@@ -21,14 +21,19 @@ function App() {
     const currentHour = time.getHours(); // only to avoid scope bugs
     if(currentHour < 5) {
       setGreetingWithTime("Good night");
+      setBgColor("bg-gray-900 text-white");
     }else if(currentHour < 12) {
       setGreetingWithTime("Good morning");
+      setBgColor("bg-yellow-100");
     }else if(currentHour < 17) {
       setGreetingWithTime("Good Afternoon");
+      setBgColor("bg-blue-200");
     }else if(currentHour < 20) {
       setGreetingWithTime("Good evening");
+      setBgColor("bg-orange-300");
     }else {
       setGreetingWithTime("Good night");
+      setBgColor("bg-gray-900 text-white");
     }
   }, [time]);
 
@@ -54,7 +59,7 @@ function App() {
   }
   return (
     <>
-      <div className='min-h-[100vh] flex flex-col px-10 pt-5 bg-gray-200'>
+      <div className={`min-h-[100vh] flex flex-col px-10 pt-5 ${bgColor}`}>
         <h1 className='text-center text-3xl my-9'>Greeting App</h1>
         <h2>Current Time: <span>{`${hours}:${minutes}:${seconds} ${hours >= 12 ? "PM" : "AM"}`}</span></h2>
         
@@ -67,7 +72,7 @@ function App() {
           }
         </div>
         <div className='flex justify-between items-center'>
-          <button className='px-4 py-2 bg-white font-bold text-lg rounded-lg shadow-xl active:-translate-y-1' onClick={handelSubmitt}>Click to generate</button>
+          <button className='px-4 py-2 bg-white font-bold text-lg rounded-lg shadow-xl active:-translate-y-1 dark:text-black' onClick={handelSubmitt}>Click to generate</button>
           <button className='px-4 py-2 bg-red-400 font-bold text-lg rounded-lg shadow-xl active:-translate-y-1' onClick={resetButton}>Reset</button>
         </div>
       </div>
