@@ -76,7 +76,7 @@ function App() {
           <button className='px-4 py-2 bg-red-400 font-bold text-lg rounded-lg shadow-xl active:-translate-y-1' onClick={resetButton}>Reset</button>
         </div>
         <div className='my-8 text-center'>
-          Made my Paras Chhetri
+          Made by Paras Chhetri
         </div>
       </div>
     </>
